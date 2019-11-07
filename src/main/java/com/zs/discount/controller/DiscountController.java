@@ -37,7 +37,6 @@ public class DiscountController {
     LOGGER.info("serviceMap get service discount: {}", d);
     LOGGER.info("get param vipType:{}, price:{}", vipType, price);
     double disount = DiscountFactory.getImpl(vipType).discount(price);
-    LOGGER.error("test error");
     return price * disount;
   }
   
