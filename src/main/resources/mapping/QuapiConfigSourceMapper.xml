@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zs.mapper.QuapiConfigSourceMapper" >
+  <resultMap id="BaseResultMap" type="com.zs.bo.QuapiConfigSource" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="config_id" property="configId" jdbcType="CHAR" />
+    <result column="config_code" property="configCode" jdbcType="VARCHAR" />
+    <result column="source_code" property="sourceCode" jdbcType="CHAR" />
+    <result column="source_id" property="sourceId" jdbcType="VARCHAR" />
+    <result column="crt_dttm" property="crtDttm" jdbcType="TIMESTAMP" />
+    <result column="lastup_dttm" property="lastupDttm" jdbcType="TIMESTAMP" />
+    <result column="crt_id" property="crtId" jdbcType="CHAR" />
+    <result column="lastup_id" property="lastupId" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, config_id, config_code, source_code, source_id, crt_dttm, lastup_dttm, crt_id, 
+    lastup_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from quapi_config_source
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" resultType="java.util.List" >
+    select
+    <include refid="Base_Column_List" />
+    from quapi_config_source
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from quapi_config_source
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zs.bo.QuapiConfigSource" >
+    insert into quapi_config_source (id, config_id, config_code, 
+      source_code, source_id, crt_dttm, 
+      lastup_dttm, crt_id, lastup_id
+      )
+    values (#{id,jdbcType=CHAR}, #{configId,jdbcType=CHAR}, #{configCode,jdbcType=VARCHAR}, 
+      #{sourceCode,jdbcType=CHAR}, #{sourceId,jdbcType=VARCHAR}, #{crtDttm,jdbcType=TIMESTAMP}, 
+      #{lastupDttm,jdbcType=TIMESTAMP}, #{crtId,jdbcType=CHAR}, #{lastupId,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zs.bo.QuapiConfigSource" >
+    insert into quapi_config_source
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="configId != null" >
+        config_id,
+      </if>
+      <if test="configCode != null" >
+        config_code,
+      </if>
+      <if test="sourceCode != null" >
+        source_code,
+      </if>
+      <if test="sourceId != null" >
+        source_id,
+      </if>
+      <if test="crtDttm != null" >
+        crt_dttm,
+      </if>
+      <if test="lastupDttm != null" >
+        lastup_dttm,
+      </if>
+      <if test="crtId != null" >
+        crt_id,
+      </if>
+      <if test="lastupId != null" >
+        lastup_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="configId != null" >
+        #{configId,jdbcType=CHAR},
+      </if>
+      <if test="configCode != null" >
+        #{configCode,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceCode != null" >
+        #{sourceCode,jdbcType=CHAR},
+      </if>
+      <if test="sourceId != null" >
+        #{sourceId,jdbcType=VARCHAR},
+      </if>
+      <if test="crtDttm != null" >
+        #{crtDttm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastupDttm != null" >
+        #{lastupDttm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="crtId != null" >
+        #{crtId,jdbcType=CHAR},
+      </if>
+      <if test="lastupId != null" >
+        #{lastupId,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zs.bo.QuapiConfigSource" >
+    update quapi_config_source
+    <set >
+      <if test="configId != null" >
+        config_id = #{configId,jdbcType=CHAR},
+      </if>
+      <if test="configCode != null" >
+        config_code = #{configCode,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceCode != null" >
+        source_code = #{sourceCode,jdbcType=CHAR},
+      </if>
+      <if test="sourceId != null" >
+        source_id = #{sourceId,jdbcType=VARCHAR},
+      </if>
+      <if test="crtDttm != null" >
+        crt_dttm = #{crtDttm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastupDttm != null" >
+        lastup_dttm = #{lastupDttm,jdbcType=TIMESTAMP},
+      </if>
+      <if test="crtId != null" >
+        crt_id = #{crtId,jdbcType=CHAR},
+      </if>
+      <if test="lastupId != null" >
+        lastup_id = #{lastupId,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zs.bo.QuapiConfigSource" >
+    update quapi_config_source
+    set config_id = #{configId,jdbcType=CHAR},
+      config_code = #{configCode,jdbcType=VARCHAR},
+      source_code = #{sourceCode,jdbcType=CHAR},
+      source_id = #{sourceId,jdbcType=VARCHAR},
+      crt_dttm = #{crtDttm,jdbcType=TIMESTAMP},
+      lastup_dttm = #{lastupDttm,jdbcType=TIMESTAMP},
+      crt_id = #{crtId,jdbcType=CHAR},
+      lastup_id = #{lastupId,jdbcType=CHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>
