@@ -6,6 +6,7 @@ package com.zs.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.zs.aspect.PagingQuery;
 import com.zs.bo.QuapiConfigSource;
 import com.zs.service.QuapiConfigSourceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,11 +37,17 @@ public class QuapiConfigSourceController {
   }
 
   @RequestMapping("/quapiConfigAll/{pageNum}/{pageSize}")
-  public PageInfo<QuapiConfigSource> selectAll(@PathVariable int pageNum, @PathVariable int pageSize) {
+  public PageInfo<QuapiConfigSource> selectPage(@PathVariable int pageNum, @PathVariable int pageSize) {
     PageHelper.startPage(pageNum, pageSize);
     List<QuapiConfigSource> results = sourceService.selectAll();
     PageInfo<QuapiConfigSource> page = new PageInfo<>(results);
     
     return page;
+  }
+
+  @PagingQuery()
+  @RequestMapping("/quapiConfigAll")
+  public List<QuapiConfigSource> selectAll() {
+    return sourceService.selectAll();
   }
 }
