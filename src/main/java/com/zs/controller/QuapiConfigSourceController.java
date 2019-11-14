@@ -8,6 +8,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zs.aspect.PagingQuery;
 import com.zs.bo.QuapiConfigSource;
+import com.zs.common.Result;
 import com.zs.service.QuapiConfigSourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,22 +32,32 @@ public class QuapiConfigSourceController {
   @Autowired
   QuapiConfigSourceService sourceService;
   
-  @RequestMapping("/quapiConfig")
+  @GetMapping("/quapiConfig")
   public QuapiConfigSource selectById(String id) {
    return sourceService.selectById(id); 
   }
 
-  @RequestMapping("/quapiConfigAll/{pageNum}/{pageSize}")
-  public PageInfo<QuapiConfigSource> selectPage(@PathVariable int pageNum, @PathVariable int pageSize) {
+//  @GetMapping("/quapiConfigAll/{pageNum}/{pageSize}")
+//  public PageInfo<QuapiConfigSource> selectPage(@PathVariable int pageNum, @PathVariable int pageSize) {
+//    PageHelper.startPage(pageNum, pageSize);
+//    List<QuapiConfigSource> results = sourceService.selectAll();
+//    PageInfo<QuapiConfigSource> page = new PageInfo<>(results);
+//    
+//    return page;
+//  }
+
+  @GetMapping("/quapiConfigAll/{pageNum}/{pageSize}")
+  public Result selectPage(@PathVariable int pageNum, @PathVariable int pageSize) {
     PageHelper.startPage(pageNum, pageSize);
     List<QuapiConfigSource> results = sourceService.selectAll();
     PageInfo<QuapiConfigSource> page = new PageInfo<>(results);
-    
-    return page;
+    Result result = new Result();
+    result.setData(page);
+    return result;
   }
-
+  
   @PagingQuery()
-  @RequestMapping("/quapiConfigAll")
+  @GetMapping("/quapiConfigAll")
   public List<QuapiConfigSource> selectAll() {
     return sourceService.selectAll();
   }
