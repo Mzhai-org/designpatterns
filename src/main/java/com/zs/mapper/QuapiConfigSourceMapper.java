@@ -4,6 +4,7 @@ import com.zs.bo.QuapiConfigSource;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface QuapiConfigSourceMapper {
@@ -16,6 +17,8 @@ public interface QuapiConfigSourceMapper {
     QuapiConfigSource selectByPrimaryKey(String id);
     
     List<QuapiConfigSource> selectAll();
+
+    List<QuapiConfigSource> selectByPage(Map<String, Object> map);
 
     int updateByPrimaryKeySelective(QuapiConfigSource record);
 

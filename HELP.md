@@ -33,3 +33,12 @@ The following guides illustrate how to use some features concretely:
  
 ### 集成logback
 在resources下新建logback-spring.xml配置文件
+
+### 使用mybatis拦截器和pageHelper实现分页
+使用拦截器时，在springboot架构下，如果拦截器上添加了@Component注解
+就不要在mybatis-config.xml中配置插件了，重复配置会导致拦截器执行两次
+执行语句子查询时，需要将表起别名
+
+pagehelper插件，也是使用拦截器实现
+ 插件只会将PageHelper.startPage();后的第一条查询语句实现分页
+ 
