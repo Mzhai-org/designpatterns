@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration debug="true">
+    <property name="log.log4jdbc.enable" value="true"/> <!--是否开启数据库日志 -->
+    <property name="log.base" value="${log.home:-D:/project/opt/res/logs}/portal/"/> <!--文件日志存储基础路径 -->
+    <property name="log.pattern.default" value="%d{HH:mm:ss} [%thread] %-5level %logger - %msg%n"/> <!-- 默认日期输出格式 -->
+    <property name="log.maxsize" value="200MB"/> <!--日志文件最大的大小-->
+    <property name="log.request.pattern" value="%d{HH:mm:ss} [%thread] [%X{clientId}] [%X{requestId}] [%X{version}] [%X{source}] [%X{localIp}] %-5level %logger - %msg%n"/>
+    
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator"/>
+
+    <!-- 控制台 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${log.pattern.default}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 出错日志 appender  -->
+    <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>${log.base}/error-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!-- each file should be at most 200MB, keep 60 days worth of history, but 
+                at most 20GB -->
+            <maxFileSize>${log.maxsize}</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>2GB</totalSizeCap>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>${log.pattern.default}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- request日志 appender  -->
+    <appender name="REQUEST" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>${log.base}/request-info-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!-- each file should be at most 200MB, keep 60 days worth of history, but
+                at most 20GB -->
+            <maxFileSize>${log.maxsize}</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>2GB</totalSizeCap>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>${log.request.pattern}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- dubbo日志 appender  -->
+    <appender name="DUBBO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>${log.base}/dubbo-debug-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!-- each file should be at most 200MB, keep 60 days worth of history, but
+                at most 20GB -->
+            <maxFileSize>${log.maxsize}</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>2GB</totalSizeCap>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>${log.pattern.default}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="BIGDATA" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>${log.base}/bigdata-charge-info-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!-- each file should be at most 200MB, keep 60 days worth of history, but
+                at most 20GB -->
+            <maxFileSize>${log.maxsize}</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>2GB</totalSizeCap>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>${log.pattern.default}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+    
+
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="ERROR"/>
+    </root>
+
+    <logger name="request.accesslog" level="INFO" >
+        <appender-ref ref="REQUEST"/>
+    </logger>
+    
+    
+    
+    
+    
+</configuration>
