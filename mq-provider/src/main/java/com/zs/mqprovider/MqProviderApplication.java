@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("com.zs.*")
+@ComponentScan({"com.zs.*"})
 public class MqProviderApplication {
 
   public static void main(String[] args) {
