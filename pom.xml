@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.zs</groupId>
-    <artifactId>designpatterns</artifactId>
+    <artifactId>move-forward-pro</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>designpatterns</name>                                
-    <description>designpatterns project</description>
+    <name>move-forward-pro</name>                                
+    <description>move-forward-pro project</description>
 
     <properties>
         <java.version>1.8</java.version>
