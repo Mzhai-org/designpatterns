@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration debug="true">
     <property name="log.log4jdbc.enable" value="true"/> <!--是否开启数据库日志 -->
-    <property name="log.base" value="${log.home:-D:/project/opt/res/logs}/portal/"/> <!--文件日志存储基础路径 -->
+    <!--<property name="log.base" value="${log.home:-D:/project/opt/res/logs}/portal/"/> &lt;!&ndash;文件日志存储基础路径 &ndash;&gt;-->
+    <property name="log.base" value="${log.home:-/home/paint/opt/res/logs}/portal/"/>
     <property name="log.pattern.default" value="%d{HH:mm:ss} [%thread] %-5level %logger - %msg%n"/> <!-- 默认日期输出格式 -->
     <property name="log.maxsize" value="200MB"/> <!--日志文件最大的大小-->
     <property name="log.request.pattern" value="%d{HH:mm:ss} [%thread] [%X{clientId}] [%X{requestId}] [%X{version}] [%X{source}] [%X{localIp}] %-5level %logger - %msg%n"/>
