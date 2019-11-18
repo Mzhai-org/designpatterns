@@ -1,7 +1,7 @@
 
-package com.zs.discount.factory;
+package com.zs.designpatternrest.discount.factory;
 
-import com.zs.discount.strategy.DiscountService;
+import com.zs.designpatternrest.discount.strategy.DiscountService;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,7 +1,7 @@
 
-package com.zs.discount.strategy;
+package com.zs.designpatternrest.discount.strategy;
 
-import com.zs.discount.factory.DiscountFactory;
+import com.zs.designpatternrest.discount.factory.DiscountFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Service;
 

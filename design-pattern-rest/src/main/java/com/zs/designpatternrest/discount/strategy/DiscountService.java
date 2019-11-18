@@ -1,5 +1,5 @@
 
-package com.zs.discount.strategy;
+package com.zs.designpatternrest.discount.strategy;
 
 /**
  * <pre>

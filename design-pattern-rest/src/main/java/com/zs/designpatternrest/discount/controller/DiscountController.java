@@ -1,8 +1,8 @@
 
-package com.zs.discount.controller;
+package com.zs.designpatternrest.discount.controller;
 
-import com.zs.discount.factory.DiscountFactory;
-import com.zs.discount.strategy.DiscountService;
+import com.zs.designpatternrest.discount.factory.DiscountFactory;
+import com.zs.designpatternrest.discount.strategy.DiscountService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
