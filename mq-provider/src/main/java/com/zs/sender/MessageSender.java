@@ -24,6 +24,8 @@ public class MessageSender {
   
   private static final Logger logger = LoggerFactory.getLogger("request.accesslog");
 
+  @Autowired
+  RabbitTemplate rabbitTemplate;
 
   @Async("taskExecutor")
   public void sendOrder(){
@@ -37,13 +39,13 @@ public class MessageSender {
     String exchange = "order-exchange";
     // 路由规则
     String routingKey = "order.test";
-//    CorrelationData correlationData = new CorrelationData();
-//    correlationData.setId(UUID.randomUUID().toString());
+    CorrelationData correlationData = new CorrelationData();
+    correlationData.setId(UUID.randomUUID().toString());
     // 第一个参数：生产者要发送的交换机
     // 第二个参数：消息路由规则
     // 第三个参数：消息体
     // 第四个参数：消息唯一id
-//    rabbitTemplate.convertAndSend(exchange,routingKey, "test", correlationData);
+    rabbitTemplate.convertAndSend(exchange,routingKey, "test", correlationData);
     logger.info("already send message");
   }
 }
