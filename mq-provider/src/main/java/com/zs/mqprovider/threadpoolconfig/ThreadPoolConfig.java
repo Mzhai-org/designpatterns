@@ -1,5 +1,5 @@
 
-package com.zs.threadpoolconfig;
+package com.zs.mqprovider.threadpoolconfig;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
