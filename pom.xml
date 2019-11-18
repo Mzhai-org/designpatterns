@@ -97,17 +97,31 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <logViolationsToConsole>true</logViolationsToConsole>
+                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                    <sourceDirectories>
+                        ${project.basedir}/src/main/java
+                    </sourceDirectories>
+                </configuration>
+            </plugin>
+            
         </plugins>
     </build>
 
     <modules>
-        <module>mybatis-rest</module>
-        <module>mq-provider</module>
-        <module>mq-consumer</module>
-        <module>design-pattern-rest</module>
-        <module>dubbo-api</module>
-        <module>dubbo-provider</module>
-        <module>dubbo-consumer</module>
+        <module>./dubbo-api</module>
+        <module>./mybatis-rest</module>
+        <module>./mq-provider</module>
+        <module>./mq-consumer</module>
+        <module>./design-pattern-rest</module>
+        <module>./dubbo-provider</module>
+        <module>./dubbo-consumer</module>
     </modules>
     
 </project>
