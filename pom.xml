@@ -21,7 +21,11 @@
     </properties>
 
     <dependencies>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -101,6 +105,9 @@
         <module>mq-provider</module>
         <module>mq-consumer</module>
         <module>design-pattern-rest</module>
+        <module>dubbo-api</module>
+        <module>dubbo-provider</module>
+        <module>dubbo-consumer</module>
     </modules>
     
 </project>
