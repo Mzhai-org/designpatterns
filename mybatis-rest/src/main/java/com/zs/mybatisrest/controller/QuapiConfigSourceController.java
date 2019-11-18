@@ -1,14 +1,14 @@
 
-package com.zs.controller;
+package com.zs.mybatisrest.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.zs.aspect.PagingQuery;
-import com.zs.bo.QuapiConfigSource;
-import com.zs.common.Result;
-import com.zs.mapper.QuapiConfigSourceMapper;
-import com.zs.service.QuapiConfigSourceService;
-import com.zs.util.Page;
+import com.zs.mybatisrest.aspect.PagingQuery;
+import com.zs.mybatisrest.bo.QuapiConfigSource;
+import com.zs.mybatisrest.common.Result;
+import com.zs.mybatisrest.mapper.QuapiConfigSourceMapper;
+import com.zs.mybatisrest.service.QuapiConfigSourceService;
+import com.zs.mybatisrest.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

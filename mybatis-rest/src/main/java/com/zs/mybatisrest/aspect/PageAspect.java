@@ -1,9 +1,9 @@
 
-package com.zs.aspect;
+package com.zs.mybatisrest.aspect;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.zs.util.StringUtils;
+import com.zs.mybatisrest.util.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;

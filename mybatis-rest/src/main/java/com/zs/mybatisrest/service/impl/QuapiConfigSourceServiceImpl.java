@@ -1,9 +1,9 @@
 
-package com.zs.service.impl;
+package com.zs.mybatisrest.service.impl;
 
-import com.zs.bo.QuapiConfigSource;
-import com.zs.mapper.QuapiConfigSourceMapper;
-import com.zs.service.QuapiConfigSourceService;
+import com.zs.mybatisrest.bo.QuapiConfigSource;
+import com.zs.mybatisrest.mapper.QuapiConfigSourceMapper;
+import com.zs.mybatisrest.service.QuapiConfigSourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

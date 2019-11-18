@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan({"com.zs.*"})
-@MapperScan("com.zs.mapper")
+@MapperScan("com.zs.mybatisrest.mapper")
 public class MybatisRestApplication {
 
   public static void main(String[] args) {

@@ -1,5 +1,5 @@
 
-package com.zs.util;
+package com.zs.mybatisrest.util;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.zs.aspect;
+package com.zs.mybatisrest.aspect;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

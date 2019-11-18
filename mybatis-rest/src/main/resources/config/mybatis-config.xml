@@ -11,6 +11,6 @@
     <!--<mapper resource="mapper/UserMapper.xml"/>-->
     <!--</mappers>-->
     <!--<plugins>-->
-        <!--<plugin interceptor="com.zs.util.PageInterceptor"></plugin>-->
+        <!--<plugin interceptor="PageInterceptor"></plugin>-->
     <!--</plugins>-->
 </configuration>

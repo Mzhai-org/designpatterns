@@ -1,6 +1,6 @@
-package com.zs.mapper;
+package com.zs.mybatisrest.mapper;
 
-import com.zs.bo.QuapiConfigSource;
+import com.zs.mybatisrest.bo.QuapiConfigSource;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

@@ -1,5 +1,5 @@
 
-package com.zs.common;
+package com.zs.mybatisrest.common;
 
 import com.github.pagehelper.PageInfo;
 

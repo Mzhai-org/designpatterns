@@ -1,8 +1,7 @@
 
-package com.zs.service;
+package com.zs.mybatisrest.service;
 
-import com.zs.bo.QuapiConfigSource;
-import org.springframework.stereotype.Service;
+import com.zs.mybatisrest.bo.QuapiConfigSource;
 
 import java.util.List;
 

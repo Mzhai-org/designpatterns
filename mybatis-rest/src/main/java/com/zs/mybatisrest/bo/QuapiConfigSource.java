@@ -1,4 +1,4 @@
-package com.zs.bo;
+package com.zs.mybatisrest.bo;
 
 import java.util.Date;
 

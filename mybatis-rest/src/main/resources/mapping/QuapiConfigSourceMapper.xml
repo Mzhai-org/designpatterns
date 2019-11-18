@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.zs.mapper.QuapiConfigSourceMapper" >
-  <resultMap id="BaseResultMap" type="com.zs.bo.QuapiConfigSource" >
+<mapper namespace="com.zs.mybatisrest.mapper.QuapiConfigSourceMapper" >
+  <resultMap id="BaseResultMap" type="com.zs.mybatisrest.bo.QuapiConfigSource" >
     <id column="id" property="id" jdbcType="CHAR" />
     <result column="config_id" property="configId" jdbcType="CHAR" />
     <result column="config_code" property="configCode" jdbcType="VARCHAR" />
@@ -36,7 +36,7 @@
     delete from quapi_config_source
     where id = #{id,jdbcType=CHAR}
   </delete>
-  <insert id="insert" parameterType="com.zs.bo.QuapiConfigSource" >
+  <insert id="insert" parameterType="com.zs.mybatisrest.bo.QuapiConfigSource" >
     insert into quapi_config_source (id, config_id, config_code, 
       source_code, source_id, crt_dttm, 
       lastup_dttm, crt_id, lastup_id
@@ -46,7 +46,7 @@
       #{lastupDttm,jdbcType=TIMESTAMP}, #{crtId,jdbcType=CHAR}, #{lastupId,jdbcType=CHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.zs.bo.QuapiConfigSource" >
+  <insert id="insertSelective" parameterType="com.zs.mybatisrest.bo.QuapiConfigSource" >
     insert into quapi_config_source
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -107,7 +107,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zs.bo.QuapiConfigSource" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.zs.mybatisrest.bo.QuapiConfigSource" >
     update quapi_config_source
     <set >
       <if test="configId != null" >
@@ -137,7 +137,7 @@
     </set>
     where id = #{id,jdbcType=CHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zs.bo.QuapiConfigSource" >
+  <update id="updateByPrimaryKey" parameterType="com.zs.mybatisrest.bo.QuapiConfigSource" >
     update quapi_config_source
     set config_id = #{configId,jdbcType=CHAR},
       config_code = #{configCode,jdbcType=VARCHAR},
