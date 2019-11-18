@@ -14,6 +14,8 @@
     <name>dubbo-api</name>
     <description>Demo project for Spring Boot</description>
 
+    <packaging>jar</packaging>
+    
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -24,6 +26,19 @@
 
     <build>
         <plugins>
+            <!--
+            SpringBoot工程打包编译时，会生成两种jar包，一种是普通的jar，另一种是可执行jar。
+            默认情况下，这两种jar的名称相同，在不做配置的情况下，普通的jar先生成，可执行jar后生成，
+            造成可执行jar会覆盖普通的jar。而projectA工程无法依赖可执行jar，所以编译失败：提示程序包xxx不存在。
+            -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <classifier>exec</classifier>
+                </configuration>
+            </plugin>
+            
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
