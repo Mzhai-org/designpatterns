@@ -24,7 +24,7 @@ public class DubboServiceImpl implements DubboService {
   @Override
   public String getStart(String name) {
     logger.info("provider start work");
-    return "Hello" + name;
+    return "Hello, " + name;
   }
   
 }
