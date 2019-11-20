@@ -6,6 +6,7 @@ import com.zs.mybatisrest.mapper.QuapiConfigSourceMapper;
 import com.zs.mybatisrest.service.QuapiConfigSourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ import java.util.List;
  * @version $Id: QuapiConfigSourceServiceImpl.java, v1.0 2019/11/13 17:56 zhaishuo Exp $
  */
 @Service
+@Transactional
 public class QuapiConfigSourceServiceImpl implements QuapiConfigSourceService {
   
   @Autowired
