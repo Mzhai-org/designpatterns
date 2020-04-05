@@ -134,6 +134,7 @@
         <module>./dubbo-provider</module>
         <module>./dubbo-consumer</module>
         <module>./spring-cloud-user</module>
+        <module>./spring-cloud-microservice</module>
     </modules>
     
 </project>

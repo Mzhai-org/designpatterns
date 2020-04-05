@@ -42,3 +42,7 @@ The following guides illustrate how to use some features concretely:
 pagehelper插件，也是使用拦截器实现
  插件只会将PageHelper.startPage();后的第一条查询语句实现分页
  
+ ### spring cloud
+ spring-cloud-user module is a provider and integration flyway,mybatis,
+ user mysql.
+ 
