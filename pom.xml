@@ -133,6 +133,7 @@
         <module>./design-pattern-rest</module>
         <module>./dubbo-provider</module>
         <module>./dubbo-consumer</module>
+        <module>./spring-cloud-user</module>
     </modules>
     
 </project>
