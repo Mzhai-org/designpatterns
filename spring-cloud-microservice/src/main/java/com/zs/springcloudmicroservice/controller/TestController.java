@@ -14,6 +14,6 @@ public class TestController {
 
     @GetMapping("user/{id}")
     public User getUserById(@PathVariable int id) {
-        return restTemplate.getForObject("http://localhost:8080/" + id, User.class);
+        return restTemplate.getForObject("http://localhost:8082/" + id, User.class);
     }
 }
