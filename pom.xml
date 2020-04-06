@@ -146,6 +146,7 @@
         <module>./eureka-cluster-peer2</module>
         <module>./spring-cloud-movie-ribbon</module>
         <module>./spring-cloud-movie-feign</module>
+        <module>./spring-cloud-user-auth</module>
     </modules>
     
 </project>
