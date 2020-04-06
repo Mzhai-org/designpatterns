@@ -140,6 +140,7 @@
         <module>./eureka-cluster-peer1</module>
         <module>./eureka-cluster-peer2</module>
         <module>./spring-cloud-movie-ribbon</module>
+        <module>./spring-cloud-movie-feign</module>
     </modules>
     
 </project>

@@ -14,6 +14,9 @@ public class MovieController {
     @Autowired
     DiscoveryClient discoveryClient;
 
+    /*
+    返回目标服务的元数据信息，包括eureka自带的元数据，hsot ip等等  还有自定义的元数据
+     */
     @GetMapping("/user-instance")
     public List<ServiceInstance> showInfo() {
         return this.discoveryClient.getInstances("microservice-provider-user");
