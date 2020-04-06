@@ -1,4 +1,4 @@
-package com.zs.springclouduser;
+package com.zs.springclouduserauth;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@MapperScan("com.zs.springclouduser.mapper")
+@MapperScan("com.zs.springclouduserauth.mapper")
 @SpringBootApplication
 @EnableTransactionManagement
 @EnableEurekaClient//该注解声明当前应用为eureka client，只能与eureka一起使用。

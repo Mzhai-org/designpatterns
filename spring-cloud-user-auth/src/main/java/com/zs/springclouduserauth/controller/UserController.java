@@ -1,7 +1,7 @@
-package com.zs.springclouduser.controller;
+package com.zs.springclouduserauth.controller;
 
-import com.zs.springclouduser.bo.User;
-import com.zs.springclouduser.mapper.UserMapper;
+import com.zs.springclouduserauth.bo.User;
+import com.zs.springclouduserauth.mapper.UserMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

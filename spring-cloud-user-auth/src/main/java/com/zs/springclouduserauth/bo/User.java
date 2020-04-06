@@ -1,4 +1,4 @@
-package com.zs.springclouduser.bo;
+package com.zs.springclouduserauth.bo;
 
 import java.math.BigDecimal;
 

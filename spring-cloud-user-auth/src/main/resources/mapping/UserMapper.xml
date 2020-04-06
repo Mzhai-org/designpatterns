@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zs.springclouduser.mapper.UserMapper">
-  <resultMap id="BaseResultMap" type="com.zs.springclouduser.bo.User">
+<mapper namespace="com.zs.springclouduserauth.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.zs.springclouduserauth.bo.User">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="name" jdbcType="VARCHAR" property="name" />
@@ -69,7 +69,7 @@
   <sql id="Base_Column_List">
     id, username, name, age, balance
   </sql>
-  <select id="selectByExample" parameterType="com.zs.springclouduser.bo.UserExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.zs.springclouduserauth.bo.UserExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -93,19 +93,19 @@
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.zs.springclouduser.bo.UserExample">
+  <delete id="deleteByExample" parameterType="com.zs.springclouduserauth.bo.UserExample">
     delete from user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zs.springclouduser.bo.User">
+  <insert id="insert" parameterType="com.zs.springclouduserauth.bo.User">
     insert into user (username, name,
       age, balance)
     values (#{username,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
       #{age,jdbcType=INTEGER}, #{balance,jdbcType=DECIMAL})
   </insert>
-  <insert id="insertSelective" parameterType="com.zs.springclouduser.bo.User">
+  <insert id="insertSelective" parameterType="com.zs.springclouduserauth.bo.User">
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -142,7 +142,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.zs.springclouduser.bo.UserExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.zs.springclouduserauth.bo.UserExample" resultType="java.lang.Long">
     select count(*) from user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -182,7 +182,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zs.springclouduser.bo.User">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zs.springclouduserauth.bo.User">
     update user
     <set>
       <if test="username != null">
@@ -200,7 +200,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zs.springclouduser.bo.User">
+  <update id="updateByPrimaryKey" parameterType="com.zs.springclouduserauth.bo.User">
     update user
     set username = #{username,jdbcType=VARCHAR},
       name = #{name,jdbcType=VARCHAR},

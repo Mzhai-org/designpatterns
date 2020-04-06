@@ -1,4 +1,4 @@
-package com.zs.springclouduser.security;
+package com.zs.springclouduserauth.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

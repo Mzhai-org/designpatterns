@@ -1,12 +1,11 @@
-package com.zs.springclouduser.mapper;
+package com.zs.springclouduserauth.mapper;
 
-import com.zs.springclouduser.bo.User;
-import com.zs.springclouduser.bo.UserExample;
+import com.zs.springclouduserauth.bo.User;
+import com.zs.springclouduserauth.bo.UserExample;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Component;
 
 @Mapper
 public interface UserMapper {

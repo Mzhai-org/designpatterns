@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.openfeign.FeignClientsConfiguration;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@Import(FeignClientsConfiguration.class)
 @RestController
 public class MovieController {
 
@@ -30,6 +30,7 @@ public class MovieController {
     @Autowired
     DiscoveryClient discoveryClient;
 
+    @Autowired
     public MovieController(Decoder decoder, Encoder encoder, Client client, Contract contract) {
         this.userUserFeignClient = Feign.builder().client(client).encoder(encoder).decoder(decoder).contract(contract)
                 .requestInterceptor(new BasicAuthRequestInterceptor("user", "password1"))
