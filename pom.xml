@@ -148,6 +148,7 @@
         <module>./spring-cloud-movie-feign</module>
         <module>./spring-cloud-user-auth</module>
         <module>./spring-cloud-movie-ribbon-hystrix</module>
+        <module>./gateway-zuul</module>
     </modules>
     
 </project>
