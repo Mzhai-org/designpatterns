@@ -49,6 +49,9 @@ public class MovieController {
         return this.discoveryClient.getInstances("microservice-provider-user-auth");
     }
 
+    /*
+    虽然使用了手动创建的feign client，但是由于feign在接口调用时集成了ribbon 所以也支持负载均衡，默认是轮询。
+     */
     @GetMapping("/user-login/{id}")
     public User fingByUser(@PathVariable long id) {
         return this.userUserFeignClient.findById(id);
