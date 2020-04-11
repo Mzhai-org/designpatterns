@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collection;
 
 @RestController
 public class UserController {
@@ -21,7 +20,7 @@ public class UserController {
 
     @GetMapping("/{id}")
     public User fingById(@PathVariable int id) {
-
+        logger.info("被调用");
         return mapper.selectByPrimaryKey(id);
     }
 
