@@ -20,9 +20,9 @@ public class MergeSort {
 
         int center = (left + right) >> 1;
 
-        sort(array, left, center);
+        sort(array, left, center);//递归调用数组拆分，直至数组只有一个元素
 
-        sort(array, center + 1, right);
+        sort(array, center + 1, right);//递归调用数组拆分，直至数组只有一个元素
 
         merge(array, left, center, right);
     }
