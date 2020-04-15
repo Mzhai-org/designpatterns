@@ -1,8 +1,9 @@
 package com.zs.springclouduser.bo;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class User {
+public class User implements Serializable {
     private Integer id;
 
     private String username;
